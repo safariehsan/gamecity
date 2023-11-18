@@ -1,6 +1,7 @@
-import { Card, CardBody, Heading, Image } from "@chakra-ui/react";
+import { Card, CardBody, HStack, Heading, Image, Text } from "@chakra-ui/react";
 import { IGame } from "../hooks/useGame";
 import PlatformIconList from "./PlatformIconList";
+import CriticScore from "./CriticScore";
 
 interface IGameCard {
   game: IGame;
@@ -14,7 +15,10 @@ const GameCard = ({ game }: IGameCard) => {
         <Heading fontSize="x-large" marginBottom={5}>
           {game.name}
         </Heading>
-        <PlatformIconList platforms={game.platforms} />
+        <HStack justifyContent="space-between">
+          <PlatformIconList platforms={game.platforms} />
+          <CriticScore score={game.metacritic} />
+        </HStack>
       </CardBody>
     </Card>
   );

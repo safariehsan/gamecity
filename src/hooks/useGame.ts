@@ -14,6 +14,7 @@ export interface IGame {
   name: string;
   background_image: string;
   platforms: IPlatform[];
+  metacritic: number;
 }
 
 export interface IGameResponse {
