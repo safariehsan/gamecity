@@ -1,4 +1,4 @@
-import { Button, ButtonGroup, Grid, GridItem, Show } from "@chakra-ui/react";
+import { Grid, GridItem, Show } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
@@ -10,12 +10,16 @@ const App = () => {
         base: `"nav" "main"`,
         lg: `"nav nav" "aside main"`, // larger than 1024px
       }}
+      templateColumns={{
+        base: "1fr",
+        lg: "220px 1fr",
+      }}
     >
       <GridItem area="nav">
         <NavBar />
       </GridItem>
       <Show above="lg">
-        <GridItem area="aside">
+        <GridItem paddingX={5} area="aside">
           <GenreList />
         </GridItem>
       </Show>

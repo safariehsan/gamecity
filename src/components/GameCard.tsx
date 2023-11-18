@@ -11,9 +11,9 @@ interface IGameCard {
 const GameCard = ({ game }: IGameCard) => {
   return (
     <Card>
-      <Image src={getCroppedImg(game.background_image)} />
+      <Image src={getCroppedImg(game.background_image, 600, 400)} />
       <CardBody>
-        <Heading fontSize="large" marginBottom={5}>
+        <Heading fontSize="medium" marginBottom={5}>
           {game.name}
         </Heading>
         <HStack justifyContent="space-between">
