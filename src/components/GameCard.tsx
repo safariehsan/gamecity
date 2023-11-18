@@ -10,10 +10,10 @@ interface IGameCard {
 
 const GameCard = ({ game }: IGameCard) => {
   return (
-    <Card borderRadius={10} overflow="hidden">
+    <Card borderRadius={10} overflow="hidden" width="300px">
       <Image src={getCroppedImg(game.background_image)} />
       <CardBody>
-        <Heading fontSize="x-large" marginBottom={5}>
+        <Heading fontSize="large" marginBottom={5}>
           {game.name}
         </Heading>
         <HStack justifyContent="space-between">
