@@ -10,7 +10,7 @@ interface IGameCard {
 
 const GameCard = ({ game }: IGameCard) => {
   return (
-    <Card borderRadius={10} overflow="hidden" width="300px">
+    <Card>
       <Image src={getCroppedImg(game.background_image)} />
       <CardBody>
         <Heading fontSize="large" marginBottom={5}>
