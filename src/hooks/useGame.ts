@@ -14,6 +14,7 @@ export interface IGame {
   background_image: string;
   platforms: IPlatformParent[];
   metacritic: number;
+  rating_top: number;
 }
 
 const useGame = (gameQuery: IGameQuery) =>

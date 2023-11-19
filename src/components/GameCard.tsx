@@ -3,6 +3,7 @@ import { IGame } from "../hooks/useGame";
 import PlatformIconList from "./PlatformIconList";
 import CriticScore from "./CriticScore";
 import getCroppedImg from "../services/image-url";
+import Emoji from "./Emoji";
 
 interface IGameCard {
   game: IGame;
@@ -19,6 +20,7 @@ const GameCard = ({ game }: IGameCard) => {
         </HStack>
         <Heading fontSize="medium" marginBottom={5}>
           {game.name}
+          <Emoji rating={game.rating_top} />
         </Heading>
       </CardBody>
     </Card>
