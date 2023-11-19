@@ -12,10 +12,14 @@ export interface IGameQuery {
   genre: IGenre;
   platform: IPlatform;
   sortBy: string;
+  searchTerm: string;
 }
 
 const App = () => {
   const [gameQuery, setGameQuery] = useState<IGameQuery>({} as IGameQuery);
+  const onSearchHandler = (searchTerm: string) => {
+    console.log("term: ", searchTerm);
+  };
   return (
     <Grid
       templateAreas={{
@@ -28,7 +32,9 @@ const App = () => {
       }}
     >
       <GridItem area="nav">
-        <NavBar />
+        <NavBar
+          onSearch={(searchTerm) => setGameQuery({ ...gameQuery, searchTerm })}
+        />
       </GridItem>
       <Show above="lg">
         <GridItem paddingX={5} area="aside">

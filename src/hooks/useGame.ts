@@ -1,7 +1,5 @@
 import { IGameQuery } from "../App";
 import useData from "./useData";
-import { IGenre } from "./useGenre";
-import { IPlatform } from "./usePlatform";
 
 export interface IPlatformParent {
   platform: {
@@ -26,6 +24,7 @@ const useGame = (gameQuery: IGameQuery) =>
         genres: gameQuery.genre?.id,
         platforms: gameQuery.platform?.id,
         ordering: gameQuery.sortBy,
+        search: gameQuery.searchTerm,
       },
     },
     [gameQuery]
