@@ -9,7 +9,7 @@ interface Props {
 
 const NavBar = ({ onSearch }: Props) => {
   return (
-    <HStack paddingX={{ base: "10", lg: "5" }} marginTop={2}>
+    <HStack paddingX={{ base: "10", lg: "5" }} marginTop={4}>
       <Image src={LogoImg} alt="logo" width="50px" />
       <Text
         fontSize="xl"
