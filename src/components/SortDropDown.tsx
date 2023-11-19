@@ -7,29 +7,39 @@ import {
   Spinner,
 } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
-import usePlatform, { IPlatform } from "../hooks/usePlatform";
 
 interface IProps {
-  onSelectPlatform: (platform: any) => void;
-  activePlatform: IPlatform | null;
+  onSelectSortOrder: (sortBy: string) => void;
+  activeSorting: string;
 }
 
-const SortDropDown = ({ onSelectPlatform, activePlatform }: IProps) => {
-  const { data, loading, error } = usePlatform();
-  if (error) return null;
-  if (loading) return <Spinner />;
+const SortDropDown = ({ onSelectSortOrder, activeSorting }: IProps) => {
+  const sortOrders = [
+    { value: "", label: "Relevance" },
+    { value: "-added", label: "Date added" },
+    { value: "name", label: "Name" },
+    { value: "-released", label: "Release date" },
+    { value: "-metacritic", label: "Popularity" },
+    { value: "-rating", label: "Average rate" },
+  ];
+  const currentSortOrder = sortOrders.find(
+    (sort) => sort.value === activeSorting
+  );
   return (
     <Menu>
       <MenuButton rightIcon={<BsChevronDown />} as={Button}>
-        Order by Date
+        Order by: {currentSortOrder?.label || "Relevance"}
       </MenuButton>
       <MenuList>
-        <MenuItem>Relevance</MenuItem>
-        <MenuItem>Date added</MenuItem>
-        <MenuItem>Name</MenuItem>
-        <MenuItem>Release date</MenuItem>
-        <MenuItem>Popularity</MenuItem>
-        <MenuItem>Average rate</MenuItem>
+        {sortOrders.map((sortOrder) => (
+          <MenuItem
+            key={sortOrder.label}
+            value={sortOrder.value}
+            onClick={() => onSelectSortOrder(sortOrder.value)}
+          >
+            {sortOrder.label}
+          </MenuItem>
+        ))}
       </MenuList>
     </Menu>
   );

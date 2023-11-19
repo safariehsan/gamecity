@@ -11,6 +11,7 @@ import SortDropDown from "./components/SortDropDown";
 export interface IGameQuery {
   genre: IGenre;
   platform: IPlatform;
+  sortBy: string;
 }
 
 const App = () => {
@@ -47,9 +48,9 @@ const App = () => {
               }
             />
             <SortDropDown
-              activePlatform={gameQuery.platform}
-              onSelectPlatform={(platform) =>
-                setGameQuery({ ...gameQuery, platform })
+              activeSorting={gameQuery.sortBy}
+              onSelectSortOrder={(sortBy) =>
+                setGameQuery({ ...gameQuery, sortBy })
               }
             />
           </HStack>
