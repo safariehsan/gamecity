@@ -1,5 +1,7 @@
+import placeholder from "../assets/placeholder.svg";
+
 const getCroppedImg = (url: string, width: number, height: number) => {
-  if (!url) return "";
+  if (!url) return placeholder;
   const target = "media/";
   const index = url.indexOf(target) + target.length;
   const croppedUrl =
