@@ -10,16 +10,16 @@ interface IGameCard {
 
 const GameCard = ({ game }: IGameCard) => {
   return (
-    <Card>
+    <Card variant="filled">
       <Image src={getCroppedImg(game.background_image, 600, 400)} />
       <CardBody>
-        <Heading fontSize="medium" marginBottom={5}>
-          {game.name}
-        </Heading>
-        <HStack justifyContent="space-between">
+        <HStack justifyContent="space-between" marginBottom={4}>
           <PlatformIconList platforms={game.platforms} />
           <CriticScore score={game.metacritic} />
         </HStack>
+        <Heading fontSize="medium" marginBottom={5}>
+          {game.name}
+        </Heading>
       </CardBody>
     </Card>
   );
