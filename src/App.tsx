@@ -7,6 +7,7 @@ import { IGenre } from "./hooks/useGenre";
 import PlatformDropDown from "./components/PlatformDropDown";
 import { IPlatform } from "./hooks/usePlatform";
 import SortDropDown from "./components/SortDropDown";
+import GameHeading from "./components/GameHeading";
 
 export interface IGameQuery {
   genre: IGenre;
@@ -46,6 +47,7 @@ const App = () => {
       </Show>
       <GridItem area="main">
         <GridItem margin={10} marginBottom={0}>
+          <GameHeading gameQuery={gameQuery} />
           <Flex gap={2}>
             <PlatformDropDown
               activePlatform={gameQuery.platform}
