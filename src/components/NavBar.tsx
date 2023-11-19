@@ -1,22 +1,20 @@
 import { HStack, Image, Text } from "@chakra-ui/react";
-import LogoImg from "../assets/logo.webp";
+import LogoImg from "../assets/logo-small.png";
 import ColorModeSwitch from "./ColorModeSwitch";
+import SearchInput from "./SearchInput";
 
 const NavBar = () => {
   return (
-    <HStack justifyContent="space-between" paddingX="5" bg="darkorchid">
-      <Image src={LogoImg} alt="logo" boxSize="60px" />
-      <HStack>
-        <Text fontSize="xl" fontWeight="bold" color="orange">
-          ~
-        </Text>
-        <Text fontSize="xl" fontWeight="bold">
-          GameCity
-        </Text>
-        <Text fontSize="xl" fontWeight="bold" color="orange">
-          ~
-        </Text>
-      </HStack>
+    <HStack paddingX="5" marginTop={2}>
+      <Image src={LogoImg} alt="logo" width="50px" />
+      <Text
+        fontSize="xl"
+        fontWeight="bold"
+        display={{ base: "none", md: "block" }}
+      >
+        GameCity
+      </Text>
+      <SearchInput />
       <ColorModeSwitch />
     </HStack>
   );
