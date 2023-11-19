@@ -1,4 +1,4 @@
-import { IPlatform } from "../hooks/useGame";
+import { IPlatformParent } from "../hooks/useGame";
 import {
   FaWindows,
   FaApple,
@@ -14,7 +14,7 @@ import { HStack, Icon } from "@chakra-ui/react";
 import { IconType } from "react-icons";
 
 interface IPlatforms {
-  platforms: IPlatform[];
+  platforms: IPlatformParent[];
 }
 
 const PlatformIconList = ({ platforms }: IPlatforms) => {
